@@ -1,9 +1,5 @@
 const Genres = () => {
-  return (
-    <div>
-      <h1>Genres</h1>
-    </div>
-  );
+    return <h2>Genres Page</h2>;
 };
 
 export default Genres;

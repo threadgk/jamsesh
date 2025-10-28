@@ -1,10 +1,11 @@
+import "./styles/Home.css";
 
-function Home() {
-  return (
-    <div>
-      <h1>Home</h1>
-    </div>
-  );
+const Home = () => {
+    return (
+        <section className="home-page">
+            <h1>Welcome to the Home Page</h1>
+        </section>
+    );
 };
 
 export default Home;
