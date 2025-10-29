@@ -1,3 +1,5 @@
+import "./../css/Trending.css";
+
 const Trending = () => {
     return <h2>Trending Page</h2>;
 };

@@ -1,6 +1,6 @@
-import "./styles/Footer.css"; 
+import "./../css/Footer.css"; 
 
-function Footer() {
+const Footer = () => {
     return (
         <footer className="footer">
             <p>&copy; 2025 Jamsesh. All rights reserved.</p>
@@ -9,3 +9,5 @@ function Footer() {
 };
 
 export default Footer;
+    
+
