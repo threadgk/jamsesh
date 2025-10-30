@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/jamsesh/static/css/main.871f0e24.css",
-    "main.js": "/jamsesh/static/js/main.11aac2bb.js",
+    "main.css": "/jamsesh/static/css/main.ab701bdd.css",
+    "main.js": "/jamsesh/static/js/main.3a5929d3.js",
     "index.html": "/jamsesh/index.html",
-    "main.871f0e24.css.map": "/jamsesh/static/css/main.871f0e24.css.map",
-    "main.11aac2bb.js.map": "/jamsesh/static/js/main.11aac2bb.js.map"
+    "main.ab701bdd.css.map": "/jamsesh/static/css/main.ab701bdd.css.map",
+    "main.3a5929d3.js.map": "/jamsesh/static/js/main.3a5929d3.js.map"
   },
   "entrypoints": [
-    "static/css/main.871f0e24.css",
-    "static/js/main.11aac2bb.js"
+    "static/css/main.ab701bdd.css",
+    "static/js/main.3a5929d3.js"
   ]
 }
