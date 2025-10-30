@@ -1,0 +1,49 @@
+#main-nav {
+    
+    text-align: center;
+    background-color: aliceblue;
+}
+
+#main-nav a#toggle-nav p  { 
+    color: royalblue;
+    font-weight: bold;
+    font-size: 40px; 
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    background: white;
+    list-style-type: none;
+}
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid royalblue;
+
+}
+li a { 
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+li a:hover {
+    color: white; 
+    background-color: royalblue;
+}
+
+
+
+/**** Larger Screen Sizes ****/ 
+
+@media (min-width: 800px) {
+    #main-nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #main-nav li {
+        border: none;
+    }
+}

@@ -4,12 +4,12 @@ body{
     border: 20px solid rgb(6, 30, 145);
     background:linear-gradient(to right,rgb(0, 140, 255),rgb(129, 224, 129), rgb(244, 244, 198) ) ;
 }
-.header{
-    background-color: royalblue;
+
+header{
+    margin: 10px;
 }
-.footer{
-    display: block;
-    padding: 10px;
-    text-align: center;
-    font-size: 14px;
+nav {
+    margin: 10px;
 }
+
+

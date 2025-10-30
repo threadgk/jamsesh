@@ -1,7 +1,10 @@
-footer {
+#footer {
     text-align: center;
     padding: 20px;
-    background-color: #326bde;
+    margin-bottom: 0;
+    background-color: royalblue;
     color: white;
 }
-    
+    /*
+    #326bde
+     */

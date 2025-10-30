@@ -6,6 +6,7 @@ import Artists from "./pages/Artists";
 import Genres from "./pages/Genres";
 import Trending from "./pages/Trending";
 import Profile from "./pages/Profile";
+import "./css/index.css"; 
 
 export default function App() {
   return (

@@ -1,5 +1,10 @@
-header.header h1{
-    font-size: 80px;
-    white-space: nowrap;
+#main-header h1{
+    margin-top: 0;
+    display:block;
+    font-size: 100px;
+    text-align: center;
+    background: royalblue; 
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 
