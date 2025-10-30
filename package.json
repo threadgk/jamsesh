@@ -1,6 +1,6 @@
 {
-  "homepage": "https://threadgk.github.io/jamsesh",
-  "name": "jamsesh-react",
+  "homepage": "/jamsesh",
+  "name": "jamsesh",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
