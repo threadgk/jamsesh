@@ -1,11 +1,37 @@
-body {
-    text-align: center;
+h2#header {
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace; 
+    font-weight: bold; 
+    text-transform: uppercase;
+    color: black;
 }
-
+p {
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace; 
+    font-size: 16px;
+    color: black;
+}
 form {
+    margin-left: 80px;
+    margin-right: 80px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    padding: 100px;
-    background: white; 
-    border: 1px solid royalblue;
+    background: #8be188a9; 
+    border: 2px dotted rgb(37, 62, 35);
+    align-items: center;
+}
+
+button {
+    font-family: 'Courier New', Courier, monospace; 
+    font-weight: bold; 
+    text-transform: uppercase;
+    border: none; 
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    margin: 10px;
+    padding: 10px;
+    color: white;
+    background-color: royalblue;
 }

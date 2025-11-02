@@ -13,7 +13,7 @@ const Navigation = () => {
 
   return (
     <nav id="main-nav"> 
-        <a onClick={toggleMenu} id="toggle-nav" href="#!">
+        <a onClick={toggleMenu} id="toggle-nav" className='hidden' href="#!">
             {downArrow?( <p>&darr;</p>):(<p>&uarr;</p>)}
         </a>
         <ul className={menuOpen?"":"hide-small"}>

@@ -18,11 +18,14 @@ const images = importAll(
         setSlideIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
     };
         return (
+    <div id="slideshow-container">
+        <h1>Page Preview</h1>
         <section className="slideshow">
             <img src={images[slideIndex]} /> 
             <a className="prev" onClick={prevSlide} href="#prev">&#10094;</a>
             <a className="next" onClick={nextSlide} href="#next">&#10095;</a>
         </section>
+    </div>
     );
 } 
 

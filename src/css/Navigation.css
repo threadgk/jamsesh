@@ -46,4 +46,7 @@ li a:hover {
     #main-nav li {
         border: none;
     }
+    .hidden{
+        display: none;
+    }
 }

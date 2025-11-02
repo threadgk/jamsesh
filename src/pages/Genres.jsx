@@ -7,7 +7,7 @@ const Genres = () => {
             <h2>Genres Page</h2>
 
             <Card
-                name="Jazz"
+                name="Alt Hip Hop"
                 image="https://example.com/jazz-image.jpg"
                 genre="Jazz"
             />
