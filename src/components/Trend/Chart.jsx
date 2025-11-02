@@ -1,9 +1,12 @@
-const Chart = () => {
+import "/Users/kaylathreadgill/jamsesh/src/css/Trending.css";
+
+const Chart = (chart) => {
     return (
-        <div>
-            <h2>Trend Chart</h2>
-            <img src="path/to/your/chart-image.png" alt="Trend Chart" />
-        </div> 
+        <div id="chart-component">
+            <h2>{chart.name}</h2>
+            <img src={chart.image} alt="Trend Chart" />
+            <p>{chart.description}</p>
+        </div>
     );
 };
 
