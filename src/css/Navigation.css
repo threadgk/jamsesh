@@ -1,13 +1,17 @@
 #main-nav {
-    
+    padding: 10px;
     text-align: center;
-    background-color: aliceblue;
+  background: linear-gradient(to right, #4a90e2, #8e44ad);
 }
 
-#main-nav a#toggle-nav p  { 
-    color: royalblue;
-    font-weight: bold;
-    font-size: 40px; 
+button#toggle-nav{
+    background-color: transparent;
+    font-size: 20px;
+    width: fit-content;
+    cursor: pointer;
+}
+.hidden {
+    display: none;
 }
 
 ul {
@@ -15,6 +19,7 @@ ul {
     padding: 0;
     background: white;
     list-style-type: none;
+
 }
 
 li {
@@ -43,6 +48,10 @@ li a:hover {
         justify-content: space-around;
     }
 
+    button#toggle-nav {
+        display: none;
+    }
+    
     #main-nav li {
         border: none;
     }

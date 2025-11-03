@@ -1,6 +1,7 @@
 import "./../css/Home.css"; 
 import Contact from "../components/Contact.jsx";
-import Slideshow from "../components/Slideshow.jsx";
+import Slideshow from "../components/Slideshow.jsx"; 
+import Gallery from "../components/Gallery.jsx";
 
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
             <p> Hey there! Welcome to my corner of the internet! JamSesh is an online blog/journal where I intend to share my love for music! Feel free to browse around!</p>
             <Contact />
             <Slideshow />
+            <Gallery />
         </section>
     );
 };
