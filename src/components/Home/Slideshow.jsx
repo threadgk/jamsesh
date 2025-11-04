@@ -1,4 +1,4 @@
-import "./../css/Slideshow.css";
+import "/Users/kaylathreadgill/jamsesh/src/css/Slideshow.css";
 import { useState } from "react";
 
 const Slideshow = () => {
@@ -8,7 +8,7 @@ const Slideshow = () => {
         return resource.keys().map(resource);
     };
 const images = importAll(
-    require.context("../images/slideshow", false, /\.(png|jpe?g|svg$|webp)/)
+    require.context("/Users/kaylathreadgill/jamsesh/public/images/slideshow", false, /\.(png|jpe?g|svg$|webp)/)
 );
     const nextSlide = () => {
         setSlideIndex((prevIndex) => (prevIndex + 1) % images.length);
