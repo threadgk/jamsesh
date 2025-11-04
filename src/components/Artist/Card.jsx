@@ -8,7 +8,7 @@ const Card = ({name, image, dob, genre, debutYear, debutAlbum, description}) => 
             <p><h3>Date of Birth:</h3> {dob}</p>
             <p><h3>Debut Year:</h3> {debutYear}</p>
             <p><h3>Debut Album:</h3> {debutAlbum}</p>
-            <p>{description}</p>
+            <p className="artist-description">{description}</p>
         </div>
             
     );

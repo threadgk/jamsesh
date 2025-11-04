@@ -8,9 +8,16 @@
 }
 
 .artist-image {
+    max-height: fit-content;
     max-width: 100%;
-    height: auto;
     border-radius: 4px;
+}
+
+.artist-description {
+    padding: 20px;
+    background-color: #3db5c24e;
+    max-width: fit-content;
+
 }
 
 
