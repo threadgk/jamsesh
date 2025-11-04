@@ -3,7 +3,7 @@ const Card = ({name, image, dob, genre, debutYear, debutAlbum, description}) => 
     return (
         <div className="artist-card">
             <h2>{name}</h2>
-            <img src={image} alt={name} className="artist-image" />
+            <img src={process.env.PUBLIC_URL + image} alt={name} className="artist-image" />
             <p><h3>Genre:</h3> {genre}</p>
             <p><h3>Date of Birth:</h3> {dob}</p>
             <p><h3>Debut Year:</h3> {debutYear}</p>
