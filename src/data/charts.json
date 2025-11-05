@@ -2,7 +2,7 @@
     {
         "_website": "Billboard",
         "url": "https://www.billboard.com/charts/",
-        "img": "json/images/charts-images/billboard.jpg",
+        "img": "/images/trend/billboard.jpg",
         "_description":"Billboard Hot 100 Top 20",
         "_1": "Song: Artist",
         "_2": "Song: Artist",
@@ -28,7 +28,7 @@
     {
         "_website": "Apple Music",
         "url": "https://music.apple.com/us/playlist/top-100-usa/pl.606afcbb70264d2eb2b51d8dbcfa6a12",
-        "img": "json/images/charts-images/apple.png",
+        "img": "/images/trend/apple.png",
         "_description":"Apple Music Top 20",
         "_1": "Song: Artist",
         "_2": "Song: Artist",
@@ -54,7 +54,7 @@
     {
         "_website": "Spotify",
         "url": "https://charts.spotify.com",
-        "img": "json/images/charts-images/spotify.jpg",
+        "img": "/images/trend/spotify-icon.jpg",
         "_description":"Spotify Music Top 20",
         "_1": "Song: Artist",
         "_2": "Song: Artist",
@@ -80,7 +80,7 @@
     {
         "_website": "iHeart Radio",
         "url": "https://www.iheart.com/playlist/iheartradio-leaderboard-312064750-2AL8dU5D7GquY5KGTcNwUm/",
-        "img": "json/images/charts-images/iHeart.jpg",
+        "img": "/images/trend/iHeart.jpg",
         "_description":"iHeart Radio Top 20",
         "_1": "Song: Artist",
         "_2": "Song: Artist",
@@ -106,7 +106,7 @@
     {
         "_website": "Youtube Music",
         "url": "https://music.youtube.com/playlist?list=OLAK5uy_kNWGJvgWVqlt5LsFDL9Sdluly4M8TvGkM",
-        "img": "json/images/charts-images/youtube.jpg",
+        "img": "/images/trend/youtube.jpg",
         "_description":"Youtube Music Top 20",
         "_1": "Song: Artist",
         "_2": "Song: Artist",

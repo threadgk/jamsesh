@@ -1,5 +1,15 @@
-.genre-component {
-    background-color: white; 
-    border: 2px solid black; 
-    margin: 10px;
+
+.genre-card {
+    border: 1px solid;
+    border-radius: 8px;
+    padding: 50px;
+    margin: 16px;
+    text-align: center;
+    background-color: hsl(0, 0%, 100%);
+}
+.genre-description {
+    padding: 20px;
+    background-color: #f7f5cc;
+    max-width: fit-content;
+
 }

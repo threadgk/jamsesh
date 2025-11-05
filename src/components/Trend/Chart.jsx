@@ -1,13 +1,15 @@
-import "/Users/kaylathreadgill/jamsesh/src/css/Trending.css";
+import SongList from "./SongList";
 
-const Chart = (chart) => {
-    return (
-        <div id="chart-component">
-            <h2>{chart.name}</h2>
-            <img src={chart.image} alt="Trend Chart" />
-            <p>{chart.description}</p>
-        </div>
-    );
+const ChartCard = ({ website, url, img, description, chartData }) => {
+  return (
+    <div className="chart-card">
+      <img src={process.env.PUBLIC_URL + img} alt={website} className="chart-image" />
+      <h2>{website}</h2>
+      <p>{description}</p>
+      <a href={url} target="_blank" rel="noopener noreferrer">Visit Chart →</a>
+      <SongList chart={chartData} />
+    </div>
+  );
 };
 
-export default Chart;
+export default ChartCard;

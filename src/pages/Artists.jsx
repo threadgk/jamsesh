@@ -1,5 +1,5 @@
 import "./../css/Artists.css";
-import Card from "../components/Artist/Card.jsx";
+import Card from "../components/Artist/ArtistCard.jsx";
 import artistData from "../data/artists.json";
 
 const Artists = () => {

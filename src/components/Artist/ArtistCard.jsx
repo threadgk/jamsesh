@@ -1,4 +1,4 @@
-import "/Users/kaylathreadgill/jamsesh/src/components/css/Card.css"
+import "./ArtistCard.css"
 const Card = ({name, image, dob, genre, debutYear, debutAlbum, description}) => {
     return (
         <div className="artist-card">
