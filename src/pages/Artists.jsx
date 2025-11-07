@@ -1,8 +1,35 @@
 import "./../css/Artists.css";
 import Card from "../components/Artist/ArtistCard.jsx";
-import artistData from "../data/artists.json";
+//import artistData from "../data/artists.json";// 
+import { useEffect, useState } from "react"; 
 
-const Artists = () => {
+
+const Artists = () => { 
+    const [artistData, setArtistData] = useState([]); 
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetch("https://jamsesh-server-wcbm.onrender.com/api/artists") 
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.json();
+            })
+            .then((data) => {
+                setArtistData(data);
+                setLoading(false);
+            })
+            .catch((error) => {
+                console.error("There was a problem with the fetch operation:", error);
+                setLoading(false);
+            });
+    }, []);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <div>
             <h1>Artists</h1> 
