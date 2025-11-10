@@ -9,7 +9,10 @@ const Profile = () => {
     useEffect(() => { 
         fetch("https://jamsesh-server-wcbm.onrender.com/api/profiles")
             .then(response => response.json())
-            .then(data => {setUser(data);})
+            .then(data => {
+                const foundUser = data.find(u => u._username === "example_user");
+                setUser(foundUser);
+            })
             .catch(error => {console.error("Error fetching user data:", error);});
     }, []);
 
@@ -19,7 +22,7 @@ const Profile = () => {
             {user ? (
             
             <Page 
-                banner={user["Profile Picture"]}
+                banner={user["profile-picture"]}
                 avatar={user.avatar}
                 username={user._username}
                 bio={user._bio}
