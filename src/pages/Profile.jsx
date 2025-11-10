@@ -7,7 +7,7 @@ const Profile = () => {
     const [user, setUser] = useState(null); 
 
     useEffect(() => { 
-        fetch("https://jamsesh-server-wcbm.onrender.com/api/artists")
+        fetch("https://jamsesh-server-wcbm.onrender.com/api/profiles")
             .then(response => response.json())
             .then(data => {setUser(data);})
             .catch(error => {console.error("Error fetching user data:", error);});
