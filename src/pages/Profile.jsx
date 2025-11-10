@@ -16,7 +16,7 @@ const Profile = () => {
     return (
         <div>
             <h2>Profile Page</h2>
-            {user ? 
+            {user ? (
             
             <Page 
                 banner={user["Profile Picture"]}
@@ -25,7 +25,7 @@ const Profile = () => {
                 bio={user._bio}
                 location={user._location}
                 favoriteArtist={user._favoriteArtist} 
-            /> : (<p>Loading...</p>)}
+            />) : (<p>Loading...</p>)}
         </div>
     );
 };
