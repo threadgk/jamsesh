@@ -5,7 +5,7 @@ import Navigation from './components/Navigation';
 import "/Users/kaylathreadgill/jamsesh/src/css/Footer.css";
 import "/Users/kaylathreadgill/jamsesh/src/css/Navigation.css";
 import "/Users/kaylathreadgill/jamsesh/src/css/Header.css";
-
+import "/Users/kaylathreadgill/jamsesh/src/css/Layout.css";
 const Layout = () => {
     return (
         <div id="structure">

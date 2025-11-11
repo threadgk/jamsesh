@@ -1,5 +1,5 @@
 .artist-component {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border: 2px solid black; 
     margin: 10px;
 }

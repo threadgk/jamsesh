@@ -1,0 +1,23 @@
+.genre-card {
+    border: 1px solid;
+    border-radius: 8px;
+    padding: 50px;
+    margin: 16px;
+    text-align: center;
+    background-color: hsla(106, 91%, 72%, 0.273);
+}
+
+.genre-image {
+    max-height: fit-content;
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.genre-description {
+    padding: 20px;
+    background-color: #638f2138;
+    max-width: fit-content;
+
+}
+
+

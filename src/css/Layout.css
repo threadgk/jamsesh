@@ -1,0 +1,6 @@
+div#structure {
+    margin: 10px;
+    background-color: rgb(224, 249, 221);
+    border: 2px solid rgb(6, 30, 145);
+    border-radius: 14px;
+}

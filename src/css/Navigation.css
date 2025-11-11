@@ -1,10 +1,13 @@
 #main-nav {
+    border: 1px solid rgb(5, 12, 55);
     padding: 10px;
     text-align: center;
-  background: linear-gradient(to right, #4a90e2, #8e44ad);
+    border-radius: 8%;
+    background: white;
 }
 
 button#toggle-nav{
+    color: rgb(5, 12, 55);
     background-color: transparent;
     font-size: 20px;
     width: fit-content;
@@ -23,8 +26,9 @@ ul {
 }
 
 li {
+    margin: 10px;
     padding: 10px;
-    border-bottom: 1px solid royalblue;
+    border-bottom: 1px solid rgb(5, 12, 55);
 
 }
 li a { 
@@ -35,7 +39,7 @@ li a {
 
 li a:hover {
     color: white; 
-    background-color: royalblue;
+    background-color: rgb(5, 12, 55);
 }
 
 
@@ -59,3 +63,8 @@ li a:hover {
         display: none;
     }
 }
+
+
+/* Scrapped 
+*  background: linear-gradient(to right, #4a90e2, #8e44ad);
+*/

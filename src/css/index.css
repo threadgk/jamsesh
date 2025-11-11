@@ -1,7 +1,6 @@
 body{
     font-family:'Courier New', Courier, monospace;
     margin:10px; 
-    border: 20px solid rgb(6, 30, 145);
     background:linear-gradient(to right,rgb(0, 140, 255),rgb(129, 224, 129), rgb(244, 244, 198) ) ;
 }
 

@@ -1,10 +1,8 @@
 #main-header h1{
     margin-top: 0;
-    display:block;
     font-size: 100px;
     text-align: center;
-    background: royalblue; 
     color: white;
-    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    text-shadow: -2px -2px 0 rgb(5, 12, 55), 2px -2px 0 rgb(5, 12, 55), -2px 2px 0 rgb(5, 12, 55), 2px 2px 0 rgb(5, 12, 55);
 }
 
