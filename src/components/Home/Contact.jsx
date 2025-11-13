@@ -1,4 +1,4 @@
-import "/Users/kaylathreadgill/jamsesh/src/css/Contact.css"
+import "../../css/Contact.css"
 import { useState } from "react";
 
 const Contact = () => {

@@ -1,4 +1,4 @@
-import "/Users/kaylathreadgill/jamsesh/src/css/Slideshow.css";
+import "../../css/Slideshow.css";
 import { useState } from "react";
 
 const Slideshow = () => {

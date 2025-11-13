@@ -1,6 +1,6 @@
 import "./../css/Profile.css";
 import "./../css/Page.css";
-import Page from "/Users/kaylathreadgill/jamsesh/src/components/Profile/Page.jsx"; 
+import Page from "../components/Profile/Page.jsx"; 
 import { useState, useEffect } from "react";
 
 const Profile = () => { 

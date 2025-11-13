@@ -1,5 +1,5 @@
-import "/Users/kaylathreadgill/jamsesh/src/css/Profile.css";
-import "/Users/kaylathreadgill/jamsesh/src/css/Page.css";
+import "../../css/Profile.css";
+import "../../css/Page.css";
     const Page = ({banner, avatar, username, bio, location, favoriteArtist}) => {
         return (
             <div className="profile-component"> 

@@ -3,6 +3,9 @@
     text-align: center;
     padding: 20px;
     margin-bottom: 0;
+    background-color: rgb(29,5,96);
+}
+footer p {
     color: white;
 }
     /*

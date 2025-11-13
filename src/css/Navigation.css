@@ -1,11 +1,7 @@
 #main-nav {
-    border: 1px solid rgb(5, 12, 55);
-    padding: 10px;
     text-align: center;
-    border-radius: 8%;
-    background: white;
+    border-bottom: 8px solid rgb(29, 5, 96);
 }
-
 button#toggle-nav{
     color: rgb(5, 12, 55);
     background-color: transparent;
@@ -20,26 +16,29 @@ button#toggle-nav{
 ul {
     margin: 0;
     padding: 0;
-    background: white;
+    background: #5ca8ffa9;
     list-style-type: none;
 
 }
 
 li {
-    margin: 10px;
-    padding: 10px;
+    padding: 14px;
     border-bottom: 1px solid rgb(5, 12, 55);
 
 }
+
+
 li a { 
-    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;;
+    color: white;
     display: block;
     text-decoration: none;
 }
 
-li a:hover {
-    color: white; 
-    background-color: rgb(5, 12, 55);
+li a:hover {  
+    text-decoration: underline;
+    color: rgb(5, 12, 55); 
 }
 
 

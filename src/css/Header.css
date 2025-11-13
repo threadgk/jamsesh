@@ -1,8 +1,11 @@
 #main-header h1{
-    margin-top: 0;
+    margin-bottom: 0px;
     font-size: 100px;
     text-align: center;
     color: white;
     text-shadow: -2px -2px 0 rgb(5, 12, 55), 2px -2px 0 rgb(5, 12, 55), -2px 2px 0 rgb(5, 12, 55), 2px 2px 0 rgb(5, 12, 55);
+}
+header#main-header{
+    background-color: rgb(29, 5, 96);
 }
 
