@@ -30,11 +30,11 @@ const Trending = () => {
     }
 
     return (
-        <div>
+        <div id="body">
             <h2>Music Charts </h2>   
             <div className= "chart-container"> 
                 {chartData.map((chart, index) => (
-                   <Chart
+                   <Chart className="chart"
                        key={index}
                        website={chart._website}
                        url={chart.url}
