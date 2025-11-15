@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/jamsesh/static/css/main.490a23bc.css",
-    "main.js": "/jamsesh/static/js/main.8c6723b8.js",
+    "main.js": "/jamsesh/static/js/main.1c63b876.js",
     "static/media/artists-prev.png": "/jamsesh/static/media/artists-prev.0771c32a24ab9b96889c.png",
     "static/media/genres-prev.png": "/jamsesh/static/media/genres-prev.b4c03d54b292fe422ac7.png",
     "static/media/profile-prev.png": "/jamsesh/static/media/profile-prev.cbac428238051c0e06f3.png",
     "static/media/charts-prev.png": "/jamsesh/static/media/charts-prev.c8b8333ea999c1b2502c.png",
     "index.html": "/jamsesh/index.html",
     "main.490a23bc.css.map": "/jamsesh/static/css/main.490a23bc.css.map",
-    "main.8c6723b8.js.map": "/jamsesh/static/js/main.8c6723b8.js.map"
+    "main.1c63b876.js.map": "/jamsesh/static/js/main.1c63b876.js.map"
   },
   "entrypoints": [
     "static/css/main.490a23bc.css",
-    "static/js/main.8c6723b8.js"
+    "static/js/main.1c63b876.js"
   ]
 }
