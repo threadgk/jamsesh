@@ -77,8 +77,8 @@ const Profile = () => {
                 username={user._username} 
                 name={user.name}
                 dob={user.dob}
-                bio={user._bio}
-                location={user._location}
+                bio={user.bio}
+                location={user.location}
             />) : (
                         <p>Please Login to View your profile</p> 
                   )}
