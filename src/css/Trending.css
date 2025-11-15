@@ -2,11 +2,14 @@
     
 }
 
-.chart-card { 
+.chart-card {  
+    overflow: hidden;
     position: relative;
     border-radius: 10%;
     padding: 25px;
-    margin: 20px;;
+    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
     border: 5px solid rgb(29,5,96);
     background-color: white;
     height: 500px;
@@ -16,41 +19,44 @@
 }
 .chart-card img { 
     position: absolute;
-    height: 130px;
-    width: 140px;
+    height: 190px;
+    width: 200px;
     border-radius: 10%;
-    border: 4px solid rgb(29,5,96); 
-    top: 17px; 
-    left: 580px;
+    top: 235px; 
+    left: 600px;
 }
 
-.chart-card h2 {  
-    position: absolute;
+.chart-card h2 { 
+    margin-top: 10px;
+    margin-left:auto;
+    margin-right: auto;
     font-size: 80px;
     height: 100px;
-    bottom: 350px; 
-    left: 104px;
 
 }
-.chart-card p {    
-    padding: 10px;
+.chart-card p {  
+    margin-bottom: 25px;
+    padding: 300px;
     color: black;
-    width: 350px;
-    font-size: 23px;
+    width: 300px;
+    font-size: 20px;
     position: absolute; 
-    top:80px;
-    right: 344px;
+    bottom:85px;
+    left: -18px;
 
 }
 .chart-card a {  
+    display: block;
+    border: 2px solid rgb(29,5,96);
     position: absolute;   
-    left: 65px;
-    top: 430px;
+    left: -10px;
+    top: 150px;
     padding: 10px;
-    color: white;
-    background-color: black;
+    color: rgb(29,5,96);
+    background-color: rgb(98, 205, 245);
     text-decoration: none;
-    height: 18px;
+    height: 14px; 
+    width: 100%;
 
 }
 
@@ -58,7 +64,7 @@
     margin-left: 0px;
     padding-left: 0px;
     top: 180px;
-    left: 200px;
+    left: 100px;
     position:absolute;
     width:500px;
     display: flex;
