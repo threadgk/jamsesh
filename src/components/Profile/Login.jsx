@@ -20,44 +20,24 @@ const Login = ({ setLoggedUser}) => {
     })
         
         .then(res => res.json()) 
-        .then(users => {
-            const found = users.find(
-                u => u.username === form.username && u.password === form.password
-            ); 
-            if (!found){
-                alert("Invalid username or password")          
+        .then(data => {
+            if(data.error){
+                alert(data.error);
             } else {
-                setLoggedUser(found); 
-                alert("Login successful");
+                alert("Login Successful");
+                setLoggedUser(data.user);
             }
-        }) 
+        })
         .catch(error => console.error(error)); 
     };  
 
     return (
-         <div className="auth-container"> 
-            <h2> Login </h2> 
-
+        
             <form onSubmit={handleSubmit}>
-                <input  
-                type= "text"
-                name= "username"
-                placeholder="Username" 
-                onChange={handleChange} 
-                required 
-                /> 
-
-                <input 
-                type="password" 
-                name="password"
-                placeholder= "Password" 
-                onChange={handleChange} 
-                required 
-                /> 
-
+                <input type= "text" name= "username" placeholder="Username" onChange={handleChange} /> 
+                <input type="password" name="password" placeholder= "Password" onChange={handleChange} /> 
                 <button type = "submit">Login</button>
             </form>
-         </div>
     )
 }; 
 

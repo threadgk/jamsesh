@@ -4,11 +4,8 @@ const Signup = ({ setLoggedUser }) => {
     const [form, setForm] = useState({
         username: "", 
         password: "",
-        avatar: "", 
-        banner: "", 
-        bio: "", 
-        location: "", 
-        favoriteArtist: ""
+        name: "",
+        dob: ""
     });
 
     const handleChange = (e) => {
@@ -32,7 +29,6 @@ const Signup = ({ setLoggedUser }) => {
                 setLoggedUser(data.user);
             }
         })
-        .catch(err => console.error(err));
     };
 
     return (
@@ -42,11 +38,8 @@ const Signup = ({ setLoggedUser }) => {
             <form onSubmit={handleSubmit}>
                 <input name="username" placeholder="Username" onChange={handleChange} required />
                 <input name="password" type="password" placeholder="Password" onChange={handleChange} required />
-                <input name="avatar" placeholder="Avatar URL" onChange={handleChange} />
-                <input name="banner" placeholder="Banner URL" onChange={handleChange} />
-                <input name="bio" placeholder="Bio" onChange={handleChange} />
-                <input name="location" placeholder="Location" onChange={handleChange} />
-                <input name="favoriteArtist" placeholder="Favorite Artist" onChange={handleChange} />
+                <input name="name" placeholder="First & Last Name" onChange={(handleChange)} required />
+                <input name= "dob" type="date" onChange={handleChange} required />
                 <button type="submit">Sign Up</button>
             </form>
         </div>
