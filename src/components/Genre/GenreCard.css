@@ -3,8 +3,8 @@
     border-radius: 8px;
     padding: 50px;
     margin: 16px;
-    text-align: center;
-    background-color: hsla(106, 91%, 72%, 0.273);
+    text-align: center; 
+    background-color: white;
 }
 
 .genre-image {
@@ -14,8 +14,8 @@
 }
 
 .genre-description {
-    padding: 20px;
-    background-color: #638f2138;
+    padding: 80px;
+    background-color:rgba(254, 255, 180, 0.786);
     max-width: fit-content;
 
 }

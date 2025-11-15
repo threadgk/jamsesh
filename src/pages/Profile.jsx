@@ -1,24 +1,33 @@
 import "./../css/Profile.css";
 import "./../css/Page.css";
 import Page from "../components/Profile/Page.jsx"; 
-import { useState, useEffect } from "react";
+import Login from "../components/Profile/Login.jsx";    
+import { useState } from "react";
 
 const Profile = () => { 
     const [user, setUser] = useState(null); 
-
-    useEffect(() => { 
-        fetch("https://jamsesh-server-wcbm.onrender.com/api/profiles")
-            .then(response => response.json())
-            .then(data => {
-                const foundUser = data.find(u => u._username === "example_user");
-                setUser(foundUser);
-            })
-            .catch(error => {console.error("Error fetching user data:", error);});
-    }, []);
+    const [showLogin, setShowLogin] = useState(false);
+    
 
     return (
         <div>
             <h2>Profile Page</h2>
+
+            {!user && (
+                <>
+                <button id="login" onClick={() => setShowLogin(!showLogin)}> 
+                    {showLogin ? "Close Login" : "Login"}
+                </button> 
+
+                {showLogin && (
+                    <div id ="login-box">
+                            <Login setLoggedUser={setUser}/>
+                    </div>
+                )}
+       
+                </>
+            )}
+    
             {user ? (
             
             <Page 
@@ -28,7 +37,9 @@ const Profile = () => {
                 bio={user._bio}
                 location={user._location}
                 favoriteArtist={user._favoriteArtist} 
-            />) : (<p>Loading...</p>)}
+            />) : (
+                        <p>Please Login to View your profile</p> 
+                  )}
         </div>
     );
 };

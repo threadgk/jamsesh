@@ -1,5 +1,6 @@
 
-.genre-card {
+.genre-card { 
+    color: rgb (29,5,96);
     border: 1px solid;
     border-radius: 8px;
     padding: 50px;

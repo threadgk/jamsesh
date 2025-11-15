@@ -1,0 +1,9 @@
+.sub-genre-card {
+    background-color: rgb(213, 247, 220); 
+} 
+.sub-genre-card h3 {
+    padding-top: 20px;
+}
+.sub-genre-card p {
+    padding-bottom: 20px;
+}
