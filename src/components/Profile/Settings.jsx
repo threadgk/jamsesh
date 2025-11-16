@@ -12,6 +12,34 @@ const Settings = ({ user, setUser, setShowSettings }) => {
         setForm({...form, [e.target.name] : e.target.value}) ; 
     }; 
 
+    const handleAvatarUpload = async (e) => {
+        const file = e.target.files[0]; 
+        const formData = new FormData(); 
+        formData.append("avatar", file); 
+
+        const res = await fetch ("https://jamsesh-server-wcbm.onrender.com/api/upload/avatar", {
+            method: "POST", 
+            body: formData
+        } ); 
+
+        const data = await res.json();
+        setForm(prev => ({ ...prev, avatar: data.filePath}));
+    }; 
+
+    const handleBannerUpload = async (e) => {
+        const file = e.target.files[0]; 
+        const formData = new FormData(); 
+        formData.append("banner", file); 
+
+        const res = await fetch("https://jamsesh-server-wcbm.onrender.com/api/upload/banner", {
+            method: "POST", 
+            body: formData
+        }); 
+
+        const data = await res.json(); 
+        setForm(prev => ({ ...prev, banner: data.filePath })) ; 
+    }; 
+
     const handleSubmit = (e) => {
         e.preventDefault(); 
 
@@ -40,9 +68,14 @@ const Settings = ({ user, setUser, setShowSettings }) => {
                 <h2> Edit Profile </h2> 
 
                 <form onSubmit={handleSubmit}>
-                    <input name="avatar" placeholder="Profile Picture" value={form.avatar} onChange={handleChange} /> 
-                    <input name="banner" placeholder="Banner URL" value={form.banner} onChange={handleChange} /> 
+                    <label> Upload Profile Picture: </label>
+                    <input type="file" accept="image/*" onChange={handleAvatarUpload} /> 
+                    
+                    <label> Upload Banner: </label>
+                    <input type="file" accept="image/*" onChange={handleBannerUpload} /> 
+                    
                     <input name="location" placeholder="Location" value={form.location} onChange={handleChange} /> 
+                    
                     <textarea name="bio" placeholder="Bio" value={form.bio} onChange={handleChange} /> 
 
                     <button type="submit"> Save Changes </button>
