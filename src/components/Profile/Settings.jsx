@@ -1,5 +1,6 @@
 import { useState } from "react";  
 import ImageSelector from "./ImageSelector";
+import "../../css/Setting.css";
 
 const Settings = ({ user, setUser, setShowSettings }) => {
     const [form, setForm] = useState ({
@@ -89,21 +90,21 @@ const Settings = ({ user, setUser, setShowSettings }) => {
     return (
         <div className="settings-modal"> 
             <div className="settings-box">
-                <h2> Edit Profile </h2> 
 
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}>                <h2> Edit Profile </h2> 
+
                     <label> Upload Profile Picture: </label>
-                    <button type="button" onClick={openAvatarModal}>Choose Picture</button>
+                    <button id="av-btn" type="button" onClick={openAvatarModal}>Choose Picture</button>
                     <label> Upload Banner: </label>
-                    <button type="button" onClick={openBannerModal}> Choose Banner </button>
+                    <button id="b-btn" type="button" onClick={openBannerModal}> Choose Banner </button>
                     <input name="location" placeholder="Location" value={form.location} onChange={handleChange} /> 
                     
                     <textarea name="bio" placeholder="Bio" value={form.bio} onChange={handleChange} /> 
 
-                    <button type="submit"> Save Changes </button>
+                    <button id="save-btn" type="submit"> Save Changes </button>
                 </form>
 
-                <button className="close-settings" onClick={() => setShowSettings(false)}> Cancel </button> 
+                <button className="close-settings" onClick={() => setShowSettings(false)}> X </button> 
             </div> 
 
             {showModal && ( 

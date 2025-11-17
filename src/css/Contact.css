@@ -10,7 +10,7 @@ p {
     font-size: 16px;
     color: rgb(29,5,96);
 }
-form {
+form#c-form {
     border: 5px solid rgb(29,5,96);
     margin-left: 180px;
     margin-right: 180px;

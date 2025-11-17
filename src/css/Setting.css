@@ -1,0 +1,51 @@
+form {
+    border: 5px solid rgb(29,5,96);
+    margin-left: 180px;
+    margin-right: 180px;
+    display: flex;
+    flex-direction: column;
+    background: white; 
+    padding: 80px;
+    align-items: center;
+}
+button { 
+    left: 700px;
+    background-color: white; 
+    color: rgb(29,5,96); 
+    border: 2px solid rgb(29,5,96);
+} 
+button#av-btn { 
+    font-size: 10px;
+    background-color: rgb(232, 238, 238);
+} 
+
+button#b-btn {
+    font-size: 10px;
+    background-color: azure;
+}
+div.settings-box {
+    background: none;
+}
+.close-settings { 
+    border: none;
+    font-size: 19px;
+    left: 140px;
+    bottom: 530px;
+    position: relative;
+    color: rgb(208, 201, 201);
+    background: none;
+} 
+.settings-modal {
+    text-align: center;
+    background-color: rgba(131, 140, 141, 0.598);
+    padding: 100px;
+    margin: 20px;
+}
+.close-settings:hover {
+    color: rgb(29,5,96); 
+} 
+
+button#save-btn:hover {
+    color: white;
+    background-color: rgb(29,5,96);
+}

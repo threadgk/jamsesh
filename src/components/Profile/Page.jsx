@@ -4,7 +4,7 @@ import "../../css/Page.css";
         return (
             <div className="profile-component"> 
             {banner && ( 
-                <img className= "profile-banner" src={banner} alt="Profile Banner" />
+                <div className= "profile-banner" style={{backgroundImage: `url(${banner})`}} />
             )}
                 <div className="profile-info">
                 {avatar && (

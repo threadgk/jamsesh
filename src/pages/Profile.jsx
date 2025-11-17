@@ -25,8 +25,7 @@ const Profile = () => {
 
 
     return (
-        <div>
-            <h2>Profile Page</h2>
+        <div id="body">
 
             {!user && (
                 <div className="auth-btns">
@@ -72,15 +71,15 @@ const Profile = () => {
             {user ? (
             
             <Page 
-                banner={user.banner}
-                avatar={user.avatar}
+                banner={user.banner ? `https://jamsesh-server-wcbm.onrender.com${user.banner}` : ""}
+                avatar={user.avatar ? `https://jamsesh-server-wcbm.onrender.com${user.avatar}` : ""}
                 username={user._username} 
                 name={user.name}
                 dob={user.dob}
                 bio={user.bio}
                 location={user.location}
             />) : (
-                        <p>Please Login to View your profile</p> 
+                        <p id="default-prompt">Please Login to View your profile</p> 
                   )}
         </div>
     );

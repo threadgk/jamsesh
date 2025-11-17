@@ -1,7 +1,10 @@
-.profile-component {
-    background-color: white;
+.profile-component { 
+    font-weight: bold;
+    background-color: rgb(255, 233, 189);
     border: 2px solid rgb(29,5,96);
-    margin: 10px;
+    margin: 10px; 
+    box-sizing: border-box;
+    overflow: hidden;
 }
 .btn {   
     font-size: 20px;
@@ -10,38 +13,38 @@
     border-radius: 10px;
     border: 2px solid rgb(29,5,96);
     background-color:rgb(138, 212, 255);
-    position: absolute;
-    top: 278px; 
-    left: 50px;
     padding-top: 5px;
 }
-.profile-info {
-    margin: 100px;
-    padding: 20px; 
-    background-color: rgb(248, 247, 193);
+.profile-info { 
+    text-align: center;
 }
-img.profile-avatar {
-    background-color: white;
-    padding: 10px;
+.profile-banner {
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
+    border: 1px solid rgb(29,5,96);
+
+}
+img.profile-avatar { 
+    
     border: 2px solid rgb(29,5,96);
     margin-left: auto; 
     margin-right: auto;
-    border-radius: 10px;
+    border-radius: 80%;
 }
 h1.profile-username { 
-    border: 1px solid rgb(29,5,96);
-    background-color: white;
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background-color: rgb(241, 245, 187); 
+    border-radius: 10%;
     font-size: 20px;
     margin: 30px;
     padding: 20px;
 }
 p.profile-bio { 
-    border: 1px solid rgb(29,5,96);
-    padding: 50px;
     width: 50%;
-    background-color:rgb(236, 247, 255);
     font-size: 16px;
-    text-decoration: underline;
     margin: 14px;
 }
  p.profile-location, p.profile-favorite-artist {
@@ -49,8 +52,5 @@ p.profile-bio {
     margin: 14px;
 } 
 p.profile-location {
-    background-color: rgb(240, 255, 239);
-}
-p.profile-favorite-artist {
-    background-color:rgb(232, 255, 247);
+    
 }

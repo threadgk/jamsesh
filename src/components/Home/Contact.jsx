@@ -54,7 +54,7 @@ const Contact = () => {
 
     return (
         <div className="contact-form">
-            <form onSubmit={handleSubmit}>
+            <form id="c-form" onSubmit={handleSubmit}>
             <h2 id="header">Contact Form</h2>  
             <p> Fill out the form with any suggestions or feedback you may have for the site.</p>  
                     <label className="label" htmlFor="name">Name :</label>

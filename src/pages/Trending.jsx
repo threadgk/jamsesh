@@ -31,7 +31,6 @@ const Trending = () => {
 
     return (
         <div id="body">
-            <h2>Music Charts </h2>   
             <div className= "chart-container"> 
                 {chartData.map((chart, index) => (
                    <Chart className="chart"
