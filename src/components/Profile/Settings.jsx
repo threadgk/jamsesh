@@ -1,4 +1,5 @@
-import { useState } from "react"; 
+import { useState } from "react";  
+import ImageSelector from "./ImageSelector";
 
 const Settings = ({ user, setUser, setShowSettings }) => {
     const [form, setForm] = useState ({
@@ -7,6 +8,29 @@ const Settings = ({ user, setUser, setShowSettings }) => {
         bio: user.bio || "", 
         location: user.location || ""
     });
+
+    const [showModal, setShowModal] = useState(false); 
+    const [modalType, setModalType] = useState("");  
+
+    const openAvatarModal = () => {
+        setModalType("avatars"); 
+        setShowModal(true); 
+    }; 
+
+    const openBannerModal = () => { 
+        setModalType("banners"); 
+        setShowModal(true);
+    }; 
+
+    const handleSelect = (img) => { 
+        if (modalType === "avatars"){
+            setForm(prev => ({ ...prev, avatar: img })); 
+
+        } else {
+             setForm(prev => ({ ...prev, banner: img })); 
+
+        }   setShowModal(false); 
+    }; 
 
     const handleChange = (e) => {
         setForm({...form, [e.target.name] : e.target.value}) ; 
@@ -69,11 +93,9 @@ const Settings = ({ user, setUser, setShowSettings }) => {
 
                 <form onSubmit={handleSubmit}>
                     <label> Upload Profile Picture: </label>
-                    <input type="file" accept="image/*" onChange={handleAvatarUpload} /> 
-                    
+                    <button type="button" onClick={openAvatarModal}>Choose Picture</button>
                     <label> Upload Banner: </label>
-                    <input type="file" accept="image/*" onChange={handleBannerUpload} /> 
-                    
+                    <button type="button" onClick={openBannerModal}> Choose Banner </button>
                     <input name="location" placeholder="Location" value={form.location} onChange={handleChange} /> 
                     
                     <textarea name="bio" placeholder="Bio" value={form.bio} onChange={handleChange} /> 
@@ -82,7 +104,15 @@ const Settings = ({ user, setUser, setShowSettings }) => {
                 </form>
 
                 <button className="close-settings" onClick={() => setShowSettings(false)}> Cancel </button> 
-            </div>
+            </div> 
+
+            {showModal && ( 
+                <ImageSelector 
+                type={modalType} 
+                onClose={() => setShowModal(false)} 
+                onSelect={handleSelect} 
+                />
+            )}
         </div>
     );
 }; 
