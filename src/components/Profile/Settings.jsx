@@ -91,22 +91,32 @@ const Settings = ({ user, setUser, setShowSettings }) => {
         <div className="settings-modal"> 
             <div className="settings-box">
 
-                <form onSubmit={handleSubmit}>                <h2> Edit Profile </h2> 
-
-                    <label> Upload Profile Picture: </label>
+                <form onSubmit={handleSubmit}>                 
+                <p className="ptag">
+                    <label id="up"> Upload Profile Picture: </label>
                     <button id="av-btn" type="button" onClick={openAvatarModal}>Choose Picture</button>
-                    <label> Upload Banner: </label>
-                    <button id="b-btn" type="button" onClick={openBannerModal}> Choose Banner </button>
-                    <input name="location" placeholder="Location" value={form.location} onChange={handleChange} /> 
-                    
-                    <textarea name="bio" placeholder="Bio" value={form.bio} onChange={handleChange} /> 
+                </p>   
 
+                <p className="ptag">
+                    <label id="ub"> Upload Banner: </label>
+                    <button id="b-btn" type="button" onClick={openBannerModal}> Choose Banner </button>
+                </p>   
+
+                <p className="ptag">
+                    <label id="location">Edit Location:</label>
+                    <input name="location" placeholder="Location" value={form.location} onChange={handleChange} /> 
+                </p>   
+
+                <p className="ptag"> 
+                    <label id="bio">Edit Bio:</label>
+                    <textarea name="bio" placeholder="Bio" value={form.bio} onChange={handleChange} /> 
+                </p>  
                     <button id="save-btn" type="submit"> Save Changes </button>
                 </form>
-
+            
                 <button className="close-settings" onClick={() => setShowSettings(false)}> X </button> 
             </div> 
-
+            <div id="settings-box2">
             {showModal && ( 
                 <ImageSelector 
                 type={modalType} 
@@ -114,6 +124,7 @@ const Settings = ({ user, setUser, setShowSettings }) => {
                 onSelect={handleSelect} 
                 />
             )}
+            </div>
         </div>
     );
 }; 
