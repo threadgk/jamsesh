@@ -10,16 +10,31 @@ const Playlist = () => {
     artist: "",
     album: "",
   });
+
   const [editingId, setEditingId] = useState(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
+  const [status, setStatus] = useState("");
 
-  // load playlist from backend on mount
+
+  useEffect(() => {
+  if (!status) return;
+
+  const timer = setTimeout(() => {
+    setStatus("");
+  }, 3000); // 3 seconds
+
+  return () => clearTimeout(timer); // cleanup
+}, [status]);
+
+
+  // load playlist from backend 
   useEffect(() => {
     fetch(`${API_BASE}/api/playlist`)
       .then((res) => res.json())
       .then((data) => {
+        console.log("playlist data from API:", data);
         setSongs(data || []);
         setLoading(false);
       })
@@ -40,23 +55,50 @@ const Playlist = () => {
     setEditingId(null);
   };
 
+  const validateForm = () => {
+    const title = form.title.trim(); 
+    const artist = form.artist.trim(); 
+    const album = form.album.trim(); 
+
+    if (!title || !artist){
+      return " Title and Artist are required"
+    } 
+    if (title.length < 3 || title.length > 50){
+      return "Title must be 3-50 characters"
+    } 
+    if (artist.length < 3 || artist.length > 50){
+      return "Artist must be 3-50 characters"
+    } 
+    if (album.length > 50){
+      return "Album must not exceed 50 characters  "
+    } 
+    
+    return ""; 
+  }
   const handleSubmit = (e) => {
     e.preventDefault();
-    setError("");
+    setError("");     
+    setStatus("");
 
-    if (!form.title.trim() || !form.artist.trim()) {
-      setError("Please enter at least a song title and artist.");
+    const validationError = validateForm(); 
+    if (validationError) {
+      setError(validationError); 
       return;
-    }
+    } 
+
+    const payload = {
+      title: form.title.trim(), 
+      artist: form.artist.trim(), 
+      album: form.album.trim(),
+    }; 
 
     setSaving(true);
 
     if (editingId) {
-      // UPDATE existing song (PUT)
       fetch(`${API_BASE}/api/playlist/${editingId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify(payload),
       })
         .then((res) => res.json())
         .then((updatedSong) => {
@@ -68,6 +110,8 @@ const Playlist = () => {
                 song.id === updatedSong.id ? updatedSong : song
               )
             );
+            
+            setStatus("Song updated successfully.");
             resetForm();
           }
         })
@@ -77,7 +121,6 @@ const Playlist = () => {
         })
         .finally(() => setSaving(false));
     } else {
-      // ADD new song (POST)
       fetch(`${API_BASE}/api/playlist`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -88,7 +131,8 @@ const Playlist = () => {
           if (newSong.error) {
             setError(newSong.error);
           } else {
-            setSongs((prev) => [...prev, newSong]);
+            setSongs((prev) => [...prev, newSong]); 
+            setStatus("Song added to playlist.");
             resetForm();
           }
         })
@@ -107,13 +151,16 @@ const Playlist = () => {
       artist: song.artist,
       album: song.album || "",
     });
+    setError(""); 
+    setStatus("");
   };
 
   const handleDelete = (id) => {
     if (!window.confirm("Remove this song from the playlist?")) return;
 
     setSaving(true);
-    setError("");
+    setError(""); 
+    setStatus("");
 
     fetch(`${API_BASE}/api/playlist/${id}`, {
       method: "DELETE",
@@ -123,7 +170,8 @@ const Playlist = () => {
         if (result.error) {
           setError(result.error);
         } else {
-          setSongs((prev) => prev.filter((song) => song.id !== id));
+          setSongs((prev) => prev.filter((song) => song.id !== id)); 
+          setStatus("Song deleted successfully!!")
           if (editingId === id) resetForm();
         }
       })
@@ -136,14 +184,15 @@ const Playlist = () => {
 
   return (
     <div className="playlist-page">
-      <h2 className="playlist-heading">My Playlist</h2>
+      <h3 className="playlist-heading">Share Your Favorite Song:</h3>
 
       {error && <p className="error-msg">{error}</p>}
-
+      {status && <p className="status-msg">{status}</p>}
+     
       {/* Add / Edit Form */}
       <form className="playlist-form" onSubmit={handleSubmit}>
         <h3 className="form-title">
-          {editingId ? "Edit Song" : "Add a New Song"}
+          {editingId ? "Edit Song" : "What's Your Currnet Fave Song"}
         </h3>
 
         <div className="form-row">
@@ -207,7 +256,8 @@ const Playlist = () => {
         ) : songs.length === 0 ? (
           <p className="empty-msg">No songs yet. Add your first track!</p>
         ) : (
-          <ul>
+          <ul className="ul">
+            <h2> Current Favorite Songs </h2>
             {songs.map((song) => (
               <li key={song.id} className="song-card">
                 <div className="song-main">

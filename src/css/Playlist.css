@@ -1,5 +1,248 @@
+
+
+.status-msg {
+  text-align: center;
+  color: green;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* Page layout */
+.playlist-page {
+    background-color: rgb(239, 236, 180);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+  box-sizing: border-box;
+}
+
+/* Heading */
+.playlist-heading {
+  font-size: 28px;
+  text-align: center;
+  color: rgb(29, 5, 96);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* Error message */
 .error-msg {
   color: #b00020;
   text-align: center;
   margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* --- FORM CARD --- */
+
+
+
+
+
+
+
+
+
+
+
+
+.ul {
+
+}
+
+.playlist-form {
+  background-color: #f7faff;
+  border: 3px solid rgb(29, 5, 96);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.form-title {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  color: rgb(29, 5, 96);
+  text-align: center;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-row label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: rgb(29, 5, 96);
+}
+
+.form-row input {
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 2px solid rgb(29, 5, 96);
+  outline: none;
+  background-color: #ffffff;
+}
+
+.form-row input:focus {
+  box-shadow: 0 0 0 2px rgba(29, 5, 96, 0.18);
+}
+
+/* Form buttons */
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: flex-end;
+}
+
+#save-song-btn,
+#cancel-edit-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 999px;
+  border: 2px solid rgb(29, 5, 96);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+/* Primary button */
+#save-song-btn {
+  background-color: white;
+  color: rgb(29, 5, 96);
+}
+
+#save-song-btn:hover:not(:disabled) {
+  background-color: rgb(29, 5, 96);
+  color: white;
+  transform: translateY(-1px);
+}
+
+#save-song-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* Secondary button */
+#cancel-edit-btn {
+  background-color: #f2f2f2;
+  color: rgb(29, 5, 96);
+}
+
+#cancel-edit-btn:hover:not(:disabled) {
+  background-color: #dedede;
+  transform: translateY(-1px);
+}
+
+/* --- PLAYLIST LIST --- */
+
+.playlist-list {
+  margin-top: 10px;
+}
+
+.empty-msg {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+.playlist-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Song card */
+
+.song-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  margin: 20px;
+  border-radius: 12px;
+  border: 2px solid rgb(29, 5, 96);
+  background-color: #ffffff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+  gap: 10px;
+}
+
+.song-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: baseline;
+}
+
+.song-title {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.song-artist,
+.song-album {
+  font-size: 14px;
+  color: #444;
+}
+
+/* Actions on each song */
+
+.song-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 999px;
+  border: 2px solid rgb(29, 5, 96);
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+/* Edit */
+.edit-btn:hover:not(:disabled) {
+  background-color: rgb(186, 215, 228);
+  transform: translateY(-1px);
+}
+
+/* Delete */
+.delete-btn {
+  border-color: #b00020;
+  color: #b00020;
+}
+
+.delete-btn:hover:not(:disabled) {
+  background-color: #ffe5e8;
+  transform: translateY(-1px);
+}
+
+.edit-btn:disabled,
+.delete-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+
+@media (min-width: 768px) {
+  .playlist-form {
+    padding: 20px 26px;
+  }
+
+  .song-card {
+    padding: 12px 18px;
+  }
 }
