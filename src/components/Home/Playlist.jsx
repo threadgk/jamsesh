@@ -9,7 +9,11 @@ const Playlist = () => {
     title: "",
     artist: "",
     album: "",
-  });
+    image: "", // optional image 
+  }); 
+
+  const getSongId = (song) => song._id || song.id;
+
 
   const [editingId, setEditingId] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -17,7 +21,7 @@ const Playlist = () => {
   const [error, setError] = useState("");
   const [status, setStatus] = useState("");
 
-
+// Auto Clear 
   useEffect(() => {
   if (!status) return;
 
@@ -30,12 +34,13 @@ const Playlist = () => {
 
 
   // load playlist from backend 
-  useEffect(() => {
+  useEffect(() => { 
+    setLoading(true);
     fetch(`${API_BASE}/api/playlist`)
       .then((res) => res.json())
       .then((data) => {
         console.log("playlist data from API:", data);
-        setSongs(data || []);
+        setSongs(Array.isArray(data) ? data : []);
         setLoading(false);
       })
       .catch((err) => {
@@ -51,7 +56,7 @@ const Playlist = () => {
   };
 
   const resetForm = () => {
-    setForm({ title: "", artist: "", album: "" });
+    setForm({ title: "", artist: "", album: "", image: "" });
     setEditingId(null);
   };
 
@@ -59,6 +64,8 @@ const Playlist = () => {
     const title = form.title.trim(); 
     const artist = form.artist.trim(); 
     const album = form.album.trim(); 
+    const image = form.image.trim();
+
 
     if (!title || !artist){
       return " Title and Artist are required"
@@ -72,9 +79,14 @@ const Playlist = () => {
     if (album.length > 50){
       return "Album must not exceed 50 characters  "
     } 
+    if (image.length > 300) {
+      return "Image URL must not exceed 300 characters "
+    }
     
     return ""; 
-  }
+  }; 
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setError("");     
@@ -90,10 +102,14 @@ const Playlist = () => {
       title: form.title.trim(), 
       artist: form.artist.trim(), 
       album: form.album.trim(),
+      image: form.image.trim(),
     }; 
 
     setSaving(true);
 
+    
+    
+    // Editing Song 
     if (editingId) {
       fetch(`${API_BASE}/api/playlist/${editingId}`, {
         method: "PUT",
@@ -105,9 +121,11 @@ const Playlist = () => {
           if (updatedSong.error) {
             setError(updatedSong.error);
           } else {
+            const updatedId = updatedSong._id || updatedSong.id ; 
+
             setSongs((prev) =>
               prev.map((song) =>
-                song.id === updatedSong.id ? updatedSong : song
+                getSongId(song) === updatedId ? updatedSong : song
               )
             );
             
@@ -124,7 +142,7 @@ const Playlist = () => {
       fetch(`${API_BASE}/api/playlist`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify(payload),
       })
         .then((res) => res.json())
         .then((newSong) => {
@@ -144,12 +162,14 @@ const Playlist = () => {
     }
   };
 
-  const handleEdit = (song) => {
-    setEditingId(song.id);
+  const handleEdit = (song) => { 
+    const id = getSongId(song);
+    setEditingId(id);
     setForm({
-      title: song.title,
-      artist: song.artist,
+      title: song.title || "",
+      artist: song.artist || "",
       album: song.album || "",
+      image: song.image || "" , 
     });
     setError(""); 
     setStatus("");
@@ -170,7 +190,7 @@ const Playlist = () => {
         if (result.error) {
           setError(result.error);
         } else {
-          setSongs((prev) => prev.filter((song) => song.id !== id)); 
+          setSongs((prev) => prev.filter((song) => getSongId(song) !== id)); 
           setStatus("Song deleted successfully!!")
           if (editingId === id) resetForm();
         }
@@ -192,7 +212,7 @@ const Playlist = () => {
       {/* Add / Edit Form */}
       <form className="playlist-form" onSubmit={handleSubmit}>
         <h3 className="form-title">
-          {editingId ? "Edit Song" : "What's Your Currnet Fave Song"}
+          {editingId ? "Edit Song" : "What's Your Current Fave Song"}
         </h3>
 
         <div className="form-row">
@@ -226,6 +246,17 @@ const Playlist = () => {
             onChange={handleChange}
             placeholder="Album"
           />
+        </div> 
+
+        <div className="form-row"> 
+          <label htmlFor="image"> Image URL (optional) </label> 
+          <input 
+            id="image" 
+            name="image" 
+            value={form.image} 
+            onChange={handleChange} 
+            placeholder="https://example.com/cover.jpg" 
+            />
         </div>
 
         <div className="form-actions">
@@ -259,7 +290,7 @@ const Playlist = () => {
           <ul className="ul">
             <h2> Current Favorite Songs </h2>
             {songs.map((song) => (
-              <li key={song.id} className="song-card">
+              <li key={getSongId(song)} className="song-card">
                 <div className="song-main">
                   <span className="song-title">{song.title}</span>
                   <span className="song-artist">by {song.artist}</span>
@@ -267,6 +298,18 @@ const Playlist = () => {
                     <span className="song-album"> · {song.album}</span>
                   )}
                 </div>
+
+                {/* optional image display */}
+                {song.image && (
+                  <div className="song-image-wrapper">
+                    <img
+                      src={song.image}
+                      alt={`${song.title} cover`}
+                      className="song-image"
+                    />
+                  </div>
+                )}
+
                 <div className="song-actions">
                   <button
                     type="button"
@@ -279,7 +322,7 @@ const Playlist = () => {
                   <button
                     type="button"
                     className="delete-btn"
-                    onClick={() => handleDelete(song.id)}
+                    onClick={() => handleDelete(getSongId(song))}
                     disabled={saving}
                   >
                     Delete
